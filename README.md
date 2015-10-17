@@ -11,7 +11,7 @@
 
 The tweentrain plugin is a helper class for [CoronaSDK transition API](https://docs.coronalabs.com/api/library/transition/index.html). It provides to run the scheduled transitions.It also supports the implementation of seting the target's properties and executing it's own functions.
 
-It is controlled by [CoronaSDK transition API](https://docs.coronalabs.com/api/library/transition/index.html). Therefore, free to use `transition.cancel()` to cancel all transitions that executed by tweentrain.
+It is controlled by [CoronaSDK transition API](https://docs.coronalabs.com/api/library/transition/index.html). Therefore,it is free to use `transition.cancel()` to cancel all transitions that executed by tweentrain.
 
 ## Syntax
 
@@ -19,11 +19,11 @@ It is controlled by [CoronaSDK transition API](https://docs.coronalabs.com/api/l
 
 ## Functions
 
-##### tweentrain.start()
-##### tweentrain.set()
-##### tweentrain.pause()
-##### tweentrain.resume()
-##### tweentrain.cancel()
+##### [tweentrain.start()](start.md)
+##### [tweentrain.set()](set.md)
+##### [tweentrain.pause()](pause.md)
+##### [tweentrain.resume()](resume.md)
+##### [tweentrain.cancel()](cancel.md)
 
 ## Project Settings
 
