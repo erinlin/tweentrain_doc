@@ -1,6 +1,7 @@
 # tweentrain.cancel()
 [< BACK](README.md)
 
+|||
 |:--|:--|
 |Type|    [Function](https://docs.coronalabs.com/api/type/Function.html)|
 |Return| none|

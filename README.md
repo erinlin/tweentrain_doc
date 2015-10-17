@@ -1,5 +1,6 @@
 # TweenTrain Plugin for CoronaSDK
 
+|||
 |:--|:--|
 |Type|    [Library](https://docs.coronalabs.com/api/type/Library.html)|
 |Version| 0.5.0 |
