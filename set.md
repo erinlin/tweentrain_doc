@@ -35,10 +35,10 @@ Table type. A table that specifies `action syntax` and the properties of the tra
     -- set target.rotation = 120 immediately
     { "set", {rotation = 120} }, 
 
-#### Action Synta
+#### Action Syntax
 The type of action paramater must be a String.
+##### Supported Syntax
 
-| Supported Syntax ||
 | Syntax | Description |
 |:--|:--|
 |{ `"transition:to"`, params }| same as transition.* |
