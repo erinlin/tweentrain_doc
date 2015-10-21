@@ -5,28 +5,29 @@
 -- Copyright (C) 2015 Erin Lin. All Rights Reserved.
 --
 ------------------------------------------------------------
-
 -- Load plugin library
 local tweentrain = require "plugin.tweentrain"
 local cX, cY =  display.contentCenterX, display.contentCenterY
-local rect = display.newRect( cX, cY, 100, 100 ) 
+local rect = display.newRect( 0, cY-50, 20, 20 ) 
+
+local iteractions = math.floor(display.contentWidth / 20)
 
 tweentrain.set( rect,  
-    -- sets target.alpha = 0 
-    { "set", {alpha = 0} }, 
+    -- sets target.alpha = 0, target.x = target.x + 20
+    { "set", {alpha = 0, x="20"} }, 
     -- executes target's setFillColor function  
     { "func:setFillColor", 1,1,1,1 },  
     { "transition:fadeIn", {time=300} }, 
     -- -- next Y value equals target.y-100
-    { "transition:to", {y="-100", transition="inBack", time=300} },  
+    { "transition:to", {y="-100", transition="outSine", time=300} },  
     { "func:setFillColor", 1,0,1,1 },  
     -- -- next Y value equals target.y+100
     { "transition:to", {y="100", transition="inSine", time=200} },  
     -- waits for 300 ms.  
     { "sleep", 300 }
 )  
--- looping the transitions  
-tweentrain.start( rect , 0)
+-- move from left to right
+tweentrain.start( rect , iteractions )
 
 local label_under = display.newText( "tweentrain" , cX, cY,  native.systemFontBold , 50)
 local label = display.newText( "tweentrain" , cX, cY,  native.systemFontBold , 50)
@@ -61,6 +62,7 @@ tweentrain.set( M,
     { "sleep", 2000 },  
     { "func:sayHello" }  
 )
+
 -- say hello once  
 tweentrain.start( K )  
 tweentrain.start( M )
