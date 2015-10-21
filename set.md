@@ -1,4 +1,5 @@
 # tweentrain.set()
+
 [< BACK](README.md)
 
 |||
@@ -17,8 +18,8 @@ To schedule transitions. The scheduled data will be cached until  be canceled or
 Table type. Any object that behaves like a table, for example display objects.
 
 ##### params (required)
-Table type. A table that specifies `action syntax` and the properties of the transition, target's properties or paramaters of target's function.
-    
+Table type. A table that specifies `action syntax` and the properties of the transition, target's properties or parameters of target's function.
+
     -- Syntax: { "action syntax", param[,,,] }
 
     -- a string type value for DisplayObject represents the relative position, 
@@ -26,7 +27,7 @@ Table type. A table that specifies `action syntax` and the properties of the tra
     -- Ex. the new value of y equals target.y + 50
     { "transition:to", {y="50", time=300} }
 
-     -- transition paramater also can be set by string type.
+     -- transition parameter also can be set by string type.
     { "transition:to", { x=300, transition="outSine", time=500} }
 
     -- executes target's setFillColor function
@@ -36,7 +37,7 @@ Table type. A table that specifies `action syntax` and the properties of the tra
     { "set", {rotation = 120} }, 
 
 #### Action Syntax
-The type of action paramater must be a String.
+The type of action parameter must be a String.
 ##### Supported Syntax
 
 | Syntax | Description |
