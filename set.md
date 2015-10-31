@@ -20,21 +20,8 @@ Table type. Any object that behaves like a table, for example display objects.
 ##### params (required)
 Table type. A table that specifies `action syntax` and the properties of the transition, target's properties or parameters of target's function.
 
-    -- Syntax: { "action syntax", param[,,,] }
+    { "action syntax", param[,,,] }
 
-    -- a string type value for DisplayObject represents the relative position, 
-    -- supports to set x, y, xScale, yScale, alpha, width, height and rotation.
-    -- Ex. the new value of y equals target.y + 50
-    { "transition:to", {y="50", time=300} }
-
-     -- transition parameter also can be set by string type.
-    { "transition:to", { x=300, transition="outSine", time=500} }
-
-    -- executes target's setFillColor function
-    { "func:setFillColor",1,1,1,1 }
-
-    -- set target.rotation = 120 immediately
-    { "set", {rotation = 120} }, 
 
 #### Action Syntax
 The type of action parameter must be a String.
@@ -51,9 +38,26 @@ The type of action parameter must be a String.
 |{ `"transition:scaleBy"`, params }| same as transition.* |
 |{ `"transition:scaleTo"`, params }| same as transition.* |
 |{ `"func:[function name]"`[, param,,,,] }| executes target's function |
-|{ `"sleep"`, ms }| does nothing and waits for next action |
+|{ `"sleep"`, ms }| does nothing and waits for the next action |
 |{ `"set"`, params }| to set target's properties |
 
+##### Transition easing function
+The transition's easing function also can be set by a string value.
+
+    { "transition:to", {y = 200, transition="inBack", time=300} }
+
+
+##### Special Syntax supports for DisplayObject
+It supports to set <b>`x`, `y`, `xScale`, `yScale`, `alpha`, `width`, `height` and `rotation`</b> of a DisplayObject instance. If you pass it as a string it is relative, but if you pass it as a value it is absolute as usual.
+
+    -- The new value of y equals target.y + 50
+    { "transition:to", {y="50", time=300} }
+
+    -- the new value of y equals target.y - 50
+    { "transition:to", {y="-50", time=300} }
+
+    -- the new value of x equals 300
+    { "transition:to", { x=300, time=500} }
 
 ## Example
     
@@ -65,10 +69,10 @@ The type of action parameter must be a String.
         -- executes target's setFillColor function  
         { "func:setFillColor", 1,1,1,1 },  
         { "transition:fadeIn", {time=300} }, 
-        -- -- next Y value equals target.y-100
+        -- next y equals target.y-100
         { "transition:to", {y="-100", transition="inBack", time=300} },  
         { "func:setFillColor", 1,0,1,1 },  
-        -- -- next Y value equals target.y+100
+        -- next y equals target.y+100
         { "transition:to", {y="100", transition="inSine", time=200} },  
         -- waits for 300 ms.  
         { "sleep", 300 }

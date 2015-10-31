@@ -10,9 +10,9 @@
 
 ## Overview
 
-The tweentrain plugin is a helper class for [CoronaSDK transition API](https://docs.coronalabs.com/api/library/transition/index.html). It provides to run the scheduled transitions.It also supports the implementation of setting the target's properties and executing its own functions.
+The tweentrain plugin is a helper class for [CoronaSDK transition API](https://docs.coronalabs.com/api/library/transition/index.html). It provides to run the queue of transitions. It also supports the implementation of setting the target's properties and executing its own functions.
 
-It is controlled by [CoronaSDK transition API](https://docs.coronalabs.com/api/library/transition/index.html). Therefore,it is free to use `transition.cancel()` to cancel all transitions that executed by tweentrain.
+It is controlled by [CoronaSDK transition API](https://docs.coronalabs.com/api/library/transition/index.html). Therefore,it is free to use `transition.pause()`, `transition.resume()`, `transition.cancel()` to pause, resume or cancel all transitions that executed by tweentrain.
 
 ## Syntax
 
@@ -54,10 +54,10 @@ To use this plugin, add an entry into the plugins table of `build.settings`. Whe
 	    -- executes target's setFillColor function  
 	    { "func:setFillColor", 1,1,1,1 },  
 	    { "transition:fadeIn", {time=300} }, 
-	    -- -- next Y value equals target.y-100
+	    -- -- next y value equals target.y-100
 	    { "transition:to", {y="-100", transition="inBack", time=300} },  
 	    { "func:setFillColor", 1,0,1,1 },  
-	    -- -- next Y value equals target.y+100
+	    -- -- next y value equals target.y+100
 	    { "transition:to", {y="100", transition="inSine", time=200} },  
 	    -- waits for 300 ms.  
 	    { "sleep", 300 }

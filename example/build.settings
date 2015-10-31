@@ -35,14 +35,12 @@ settings =
 			},
 		},
 	},
-	settings =
-	{
-	    plugins =
-	    {
-	        ["plugin.tweentrain"] =
-	        {
-	            publisherId = "com.erinylin"
-	        },
-	    },      
-	}
+
+    plugins =
+    {
+        ["plugin.tweentrain"] =
+        {
+            publisherId = "com.erinylin"
+        },
+    }      
 }
