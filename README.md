@@ -3,7 +3,7 @@
 |||
 |:--|:--|
 |Type|    [Library](https://docs.coronalabs.com/api/type/Library.html)|
-|Version| 0.5.0 |
+|Version| 0.6.0 |
 |Platforms| All|
 |Download| Waiting for review |
 
