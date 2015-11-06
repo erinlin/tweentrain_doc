@@ -5,7 +5,7 @@
 |Type|    [Library](https://docs.coronalabs.com/api/type/Library.html)|
 |Version| 0.6.0 |
 |Platforms| All|
-|Download| Waiting for review |
+|[Corona Plugin Store](https://store.coronalabs.com/plugin/tweentrain) ||
 
 
 ## Overview
