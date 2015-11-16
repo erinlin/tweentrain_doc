@@ -5,7 +5,7 @@
 |Type|    [Library](https://docs.coronalabs.com/api/type/Library.html)|
 |Version| 0.6.0 |
 |Platforms| All|
-|[Corona Plugin Store](https://store.coronalabs.com/plugin/tweentrain) ||
+| Download | [Corona Plugin Store](https://store.coronalabs.com/plugin/tweentrain) |
 
 
 ## Overview
@@ -41,8 +41,24 @@ To use this plugin, add an entry into the plugins table of `build.settings`. Whe
 	    },      
 	}
 
-## Example
+## Examples
+
+Generally, if you want to move a target to the right after jumping, the syntax is as follows:
 	
+	transition.to( target, {y = target.y-100, transition=easing.outSine, time = 400} )
+	transition.to( target, {y = target.y+100, transition=easing.inSine, time = 300, delay=400} )
+	transition.to( target, {x = target.x+300, transition=easing.inSine, time = 600, delay=700} )
+
+When you use tweentran, it can be written as follows:
+
+	tweentrain.set( target,
+	    { "transition:to", {y="-100", transition="outSine", time=400} },  
+	    { "transition:to", {y="100", transition="inSine", time=300} },  
+	    { "transition:to", {x="300", transition="inSine", time=600} }
+	)
+	tweentrain.start( target )
+
+---
 	-- Load plugin library
 	local tweentrain = require "plugin.tweentrain"
 
